@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" class="bordered shadow" style="padding:40px 10px">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
+  <span>socket-app</span>
+  <span *ngFor="let item of views; i as index">
+    {{i}}
+  </span>
+  <mat-nav-list>
+    <a mat-list-item routerLink="/profile">Home</a>
+  <a mat-list-item (click)="logout()">logout</a>
+</mat-nav-list>
+  <!-- <p>{{notification}}</p> -->
+  <p class="spacer"></p>
+  <!-- <button (click)=" progress()">click</button> -->
+  <div>
+    <img routerLink="{{result.image}}" style=" border-radius: 100%; width: 40px ;height: 40px;display: block;" src="{{result.image}}" alt="">
+    <!-- <small>{{result.firstname}}</small> -->
+  </div>
+</mat-toolbar>
